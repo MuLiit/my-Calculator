@@ -1,0 +1,80 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    align-content: center;
+}
+.browser{
+    margin-top: 150px;
+    margin-left: 1900px;
+    width: 200px;
+    padding: 10px;
+    font-size: 20pt;
+    margin: auto;
+}
+
+.container {
+    margin: auto;
+    margin-top: 60px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #abc;
+    background-color: #c9f;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.output {
+    font-size: 2em;
+    text-align: right;
+    padding: 12px;
+    background-color: #eef;
+    border: 1px solid #cce;
+}
+
+.button {
+    font-size: 1.5em;
+    margin: 5px;
+    width: 60px;
+    height: 50px;
+    border: none;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonOfOperation {
+    font-size: 1.5em;
+    margin: 5px;
+    width: 60px;
+    height: 50px;
+    border: 1px solid #afc;
+    background-color: #aef;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonOfAD {
+    font-size: 1.5em;
+    margin: 5px;
+    width: 60px;
+    height: 50px;
+    border: none;
+    background-color: #e86;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #98A;
+}
+
+.buttonOfOperation:hover {
+    background-color: #98c;
+}
+
+.clear {
+    background-color: #ff6666;
+}
+
+.equals {
+    background-color: #66eeAA;
+}
