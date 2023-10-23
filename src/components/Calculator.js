@@ -75,7 +75,6 @@ function Calculator() {
               setOutput(String(parts[0] + parts[1]));
             }
           }
-          
         else {
             setOutput(String(eval(output)));
         }
