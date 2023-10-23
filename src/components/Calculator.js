@@ -15,19 +15,6 @@ function Calculator() {
         output > 1 ? setOutput(output.slice(0, -1)) : setOutput('0');
     };
 
-    const Calculate1 = (operator) => {
-      if (output.includes(operator)) {
-        const parts = output.split(operator);
-        if (parts.length === 2) {
-          if (isNaN(parts[1])) {
-            setOutput('无效输入');
-          } else {
-          setOutput('无效输入');
-          }
-        }
-      }
-    }
-
     const calculate = () => {
         if (output.includes('√')) {
             const num = output.substring(1);
