@@ -81,8 +81,19 @@ function Calculator() {
           }
         }
         
-        else {
-            setOutput(String(eval(output)));
+        else if (output.includes('%')) {
+          const parts = output.split('%');
+          if (parts.length === 2) {
+            const num1 = parseFloat(parts[0]);
+            const num2 = parseFloat(parts[1]);
+            if (!isNaN(num1) && !isNaN(num2)) {
+              setOutput(String(num1 % num2));
+            } else {
+              setOutput('无效输入');
+            }
+          } else {
+            setOutput('无效输入');
+          }
         }
     };
     return (
