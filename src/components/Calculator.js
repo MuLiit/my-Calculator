@@ -15,6 +15,19 @@ function Calculator() {
         output > 1 ? setOutput(output.slice(0, -1)) : setOutput('0');
     };
 
+    const Calculate1 = (operator) => {
+      if (output.includes(operator)) {
+        const parts = output.split(operator);
+        if (parts.length === 2) {
+          if (isNaN(parts[1])) {
+            setOutput('无效输入');
+          } else {
+          setOutput('无效输入');
+          }
+        }
+      }
+    }
+
     const calculate = () => {
         if (output.includes('√')) {
             const num = output.substring(1);
@@ -30,7 +43,6 @@ function Calculator() {
                 if (denominator === 0) {
                   setOutput('除数不能为0');
                 } else {
-                  // 执行除法操作
                   setOutput(String(numerator / denominator));
                 }
               } else {
@@ -40,7 +52,30 @@ function Calculator() {
               setOutput('无效输入');
             }
           }
-        
+
+          else if (output.includes('*')) {
+            const parts = output.split('*');
+            Calculate1('*');
+            if (!output.includes('无效输入')){
+              setOutput(String(parts[0] * parts[1]));
+            }
+          }
+
+          else if (output.includes('-')) {
+            const parts = output.split('-');
+            Calculate1('*');
+            if (!output.includes('无效输入')){
+              setOutput(String(parts[0] - parts[1]));
+            }
+          }
+          else if (output.includes('+')) {
+            const parts = output.split('+');
+            Calculate1('*');
+            if (!output.includes('无效输入')){
+              setOutput(String(parts[0] + parts[1]));
+            }
+          }
+          
         else {
             setOutput(String(eval(output)));
         }
