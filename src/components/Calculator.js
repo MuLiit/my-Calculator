@@ -51,32 +51,62 @@ function Calculator() {
             } else {
               setOutput('无效输入');
             }
-          }
+        }
 
-          else if (output.includes('*')) {
-            const parts = output.split('*');
-            Calculate1('*');
-            if (!output.includes('无效输入')){
-              setOutput(String(parts[0] * parts[1]));
+        else if (output.includes('*')) {
+          const parts = output.split('*');
+          if (parts.length === 2) {
+            if (!isNaN(parts[0]) && !isNaN(parts[1])) {
+                setOutput(String(parts[0] * parts[1]));
+            } else {
+              setOutput('无效输入');
             }
+          } else {
+            setOutput('无效输入');
           }
+        }
 
-          else if (output.includes('-')) {
-            const parts = output.split('-');
-            Calculate1('-');
-            if (!output.includes('无效输入')){
-              setOutput(String(parts[0] - parts[1]));
+        else if (output.includes('-')) {
+          const parts = output.split('-');
+          if (parts.length === 2) {
+            if (!isNaN(parts[0]) && !isNaN(parts[1])) {
+                setOutput(String(parts[0] - parts[1]));
+            } else {
+              setOutput('无效输入');
             }
+          } else {
+            setOutput('无效输入');
           }
-          else if (output.includes('+')) {
-            const parts = output.split('+');
-            Calculate1('+');
-            if (!output.includes('无效输入')){
-              setOutput(String(parts[0] + parts[1]));
+        }
+
+        else if (output.includes('+')) {
+          const parts = output.split('+');
+          if (parts.length === 2) {
+            const num1 = parseFloat(parts[0]);
+            const num2 = parseFloat(parts[1]);
+            if (!isNaN(num1) && !isNaN(num2)) {
+              setOutput(String(num1 + num2));
+            } else {
+              setOutput('无效输入');
             }
+          } else {
+            setOutput('无效输入');
           }
-        else {
-            setOutput(String(eval(output)));
+        }
+        
+        else if (output.includes('%')) {
+          const parts = output.split('%');
+          if (parts.length === 2) {
+            const num1 = parseFloat(parts[0]);
+            const num2 = parseFloat(parts[1]);
+            if (!isNaN(num1) && !isNaN(num2)) {
+              setOutput(String(num1 % num2));
+            } else {
+              setOutput('无效输入');
+            }
+          } else {
+            setOutput('无效输入');
+          }
         }
     };
     return (
