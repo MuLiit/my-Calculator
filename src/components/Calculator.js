@@ -96,6 +96,7 @@ function Calculator() {
           }
         }
     };
+    
     return (
         <div className="container">
             <div className="output" id="output">
