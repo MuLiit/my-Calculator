@@ -63,14 +63,14 @@ function Calculator() {
 
           else if (output.includes('-')) {
             const parts = output.split('-');
-            Calculate1('*');
+            Calculate1('-');
             if (!output.includes('无效输入')){
               setOutput(String(parts[0] - parts[1]));
             }
           }
           else if (output.includes('+')) {
             const parts = output.split('+');
-            Calculate1('*');
+            Calculate1('+');
             if (!output.includes('无效输入')){
               setOutput(String(parts[0] + parts[1]));
             }
