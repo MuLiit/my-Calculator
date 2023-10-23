@@ -19,11 +19,32 @@ function Calculator() {
         if (output.includes('√')) {
             const num = output.substring(1);
             setOutput(String(Math.sqrt(Number(num))));
-        } else {
+        }
+
+        else if (output.includes('/')) {
+            const parts = output.split('/');
+            if (parts.length === 2) {
+              const numerator = parseFloat(parts[0]);
+              const denominator = parseFloat(parts[1]);
+              if (!isNaN(numerator) && !isNaN(denominator)) {
+                if (denominator === 0) {
+                  setOutput('除数不能为0');
+                } else {
+                  // 执行除法操作
+                  setOutput(String(numerator / denominator));
+                }
+              } else {
+                setOutput('无效输入');
+              }
+            } else {
+              setOutput('无效输入');
+            }
+          }
+        
+        else {
             setOutput(String(eval(output)));
         }
     };
-
     return (
         <div className="container">
             <div className="output" id="output">
